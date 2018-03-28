@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/imagineLife/wp-babel-react#readme",
   "devDependencies": {
-    "webpack": "^4.3.0"
+    "webpack": "^4.3.0",
+    "webpack-cli": "^2.0.13"
   }
 }
