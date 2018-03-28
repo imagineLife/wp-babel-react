@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/imagineLife/wp-babel-react/issues"
   },
-  "homepage": "https://github.com/imagineLife/wp-babel-react#readme"
+  "homepage": "https://github.com/imagineLife/wp-babel-react#readme",
+  "devDependencies": {
+    "webpack": "^4.3.0"
+  }
 }
