@@ -30,6 +30,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
+    }),
+    new MiniCss({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
     })
   ]
 };
