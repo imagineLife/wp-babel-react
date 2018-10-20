@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 const Sidebar = () => {
   return (
-    <div>
+    <nav>
       <h2>Visualization</h2>
-      <p>Test</p>
-    </div>
+      <ul>Bar</ul>
+    </nav>
   );
 };
 export default Sidebar;
