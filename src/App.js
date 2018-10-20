@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Sidebar from './components/Sidebar'
 const App = () => {
   return (
-    <div>
-      <p>Dummy React Component here!</p>
-    </div>
+    <main>
+    	<Sidebar />
+    </main>
   );
 };
 export default App;
-ReactDOM.render(<App />, document.getElementById("app"));
