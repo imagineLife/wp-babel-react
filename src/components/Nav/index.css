@@ -1,0 +1,44 @@
+nav, footer {
+  padding-top:1%;
+  /*background-color: rgba(0,0,0,.8);*/
+}
+
+nav {
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 45px;
+  z-index: 10;
+}
+
+nav ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:block;
+}
+
+ul li.liWithIcon{
+  margin: 0 auto;
+  list-style-type: none;
+  display:inline-block;
+  width:33%;
+  text-align: center;
+  line-height: 45px;
+}
+
+.liWithIcon a {
+  height:55px; 
+}
+
+.icon{
+  width:40px;
+  height:auto;
+  margin-top: 15px;
+}
+
+a{
+  text-decoration: none;
+}
