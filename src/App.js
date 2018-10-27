@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Nav from './components/Nav'
 const App = () => {
   return (
-    <main>
-    	<Nav />
-    </main>
+    <div>
+      <p>Dummy React Component here!</p>
+    </div>
   );
 };
 export default App;
+ReactDOM.render(<App />, document.getElementById("app"));
