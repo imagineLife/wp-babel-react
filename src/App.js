@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Title from './components/Title'
+
 const App = ({pText}) => {
+  let titleText = 'app title text!'
   	return (
-	    <div>
-	      <p>{pText}</p>
-	    </div>
+	    <Title text={titleText} />
 	  );
 };
+
 export default App;
-ReactDOM.render(<App pText={'test text'}/>, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById("app"));
