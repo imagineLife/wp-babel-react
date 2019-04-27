@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCss = require("mini-css-extract-plugin");
+const path = require('path');
 
 module.exports = {
   entry:'./src/index.js',
