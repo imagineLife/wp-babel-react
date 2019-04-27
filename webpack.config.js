@@ -29,6 +29,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCss.loader, "css-loader"]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images'
+            }
+          }
+        ]
       }
     ]
   },
