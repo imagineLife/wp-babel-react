@@ -43,5 +43,13 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
     "jest": "^24.7.1"
+  },
+   "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/enzyme.setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   }
 }
