@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Title from '../components/Title'
 
-const App = ({pText}) => {
-  let titleText = 'app title text!'
+const Router = ({pText}) => {
   	return (
-	    <Title text={titleText} />
+	    <div id="app">
+	    	<p>Router</p>
+	    </div>
 	  );
 };
 
-export default App;
+export default Router;
