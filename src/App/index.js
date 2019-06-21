@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Title from '../components/Title'
+import {BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 const DashRoute = React.lazy(() => import('../containers/Dashboard'))
 const DetailRoute = React.lazy(() => import('../containers/ItemDetails'))
-import {BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-
 
 const AppRouter = () => {
   	return (
