@@ -1,8 +1,10 @@
-module.exports = {
-	"dev": {
-		"sourceString": "devSource"
-	},
-	"prod": {
-		"sourceString": "prodSource"
+[ 
+	{
+		"dev": {
+			"sourceString": "devSource"
+		},
+		"prod": {
+			"sourceString": "prodSource"
+		}
 	}
-}
+]
