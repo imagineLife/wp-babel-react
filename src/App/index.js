@@ -7,9 +7,11 @@ import fetcher from '../../utils/fetcher';
 const DashRoute = React.lazy(() => import('../containers/Dashboard'))
 const DetailRoute = React.lazy(() => import('../containers/ItemDetails'))
 
-const AppRouter = () => {
 
+const useAppConfig = () => {
+	console.log('use app config here!');
 	let [ appConfig, setAppConfig ] = React.useState(null)
+	
 	/*
 		"onLoad", load the appconfig file
 	*/
@@ -22,10 +24,16 @@ const AppRouter = () => {
 
 	}, [])
 
-	console.log('appConfig')
-	console.log(appConfig)
+	return appConfig
+}
+
+const AppRouter = () => {
+	const appConfig = useAppConfig()
 	
-	
+	if(!appConfig){
+		<p>Loading appconfig...</p>
+	}
+
   	return (
 	    <Router>
 	      <Switch>
