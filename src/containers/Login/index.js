@@ -1,15 +1,13 @@
 import React from 'react'
 import './index.css'
+import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
 
 const Login = () => {
 	return(
 		<div id="login">
 			<form className="modal-content animate" action="/action_page.php">
 			    <div className="imgcontainer">
-			      <span className="close" title="Close Modal">&times;</span>
-			      {/*
-					<img src="img_avatar2.png" alt="Avatar" className="avatar" />
-			      */}
+			      <img src={CompanyLogo} alt="Generic Company" className="avatar" />
 			    </div>
 
 			    <div className="container">
