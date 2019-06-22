@@ -1,12 +1,11 @@
 import React from 'react'; 
 
+
+/* Loads app config file */
+
 const useAppConfig = () => {
-	console.log('use app config here!');
 	let [ appConfig, setAppConfig ] = React.useState(null)
-	
-	/*
-		"onLoad", load the appconfig file
-	*/
+
 	React.useEffect(() => {
 		fetch(`./appconfig/config.js`)
 		.then(res => res.json()) 
