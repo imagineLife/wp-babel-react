@@ -7,12 +7,13 @@ const useAppConfig = () => {
 	let [ appConfig, setAppConfig ] = React.useState(null)
 
 	React.useEffect(() => {
-		fetch(`./appconfig/config.js`)
-		.then(res => res.json()) 
-		.then(res => {
-			setAppConfig(res[0]['dev'])	
-		})
-
+		setTimeout(() => {
+			fetch(`./appconfig/config.js`)
+			.then(res => res.json()) 
+			.then(res => {
+				setAppConfig(res[0]['dev'])	
+			})
+		}, 1500)
 	}, [])
 
 	return appConfig
