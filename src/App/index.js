@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Title from '../components/Title'
 import {BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
-import fetcher from '../../utils/fetcher';
 import { useAppConfig } from '../lib/useAppConfig'
 
 const DashRoute = React.lazy(() => import('../containers/Dashboard'))
