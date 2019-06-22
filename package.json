@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development --open 'Google Chrome'",
+    "dev": "NODE_ENV=dev webpack-dev-server --mode development --open 'Google Chrome'",
     "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
