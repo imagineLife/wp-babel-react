@@ -3,9 +3,16 @@ import './index.css'
 import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
 
 const Login = () => {
+
+	const submitForm = (e) => {
+		e.preventDefault()
+		console.log('e.target')
+		console.log(e)	
+	}
+
 	return(
 		<div id="login">
-			<form className="modal-content animate" action="/action_page.php">
+			<form className="modal-content animate" onSubmit={e => submitForm(e)}>
 			    <div className="imgcontainer">
 			      <img src={CompanyLogo} alt="Generic Company" className="avatar" />
 			    </div>
