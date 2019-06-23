@@ -4,10 +4,13 @@ import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
 
 const Login = () => {
 
+	const [formData, setFormData] = React.useState({
+		uname: '',
+		psw: ''
+	})
+
 	const submitForm = (e) => {
 		e.preventDefault()
-		console.log('e.target')
-		console.log(e)	
 	}
 
 	return(
@@ -20,11 +23,33 @@ const Login = () => {
 			    <div className="container">
 			      <label htmlFor="uname">
 			      	<b>Username</b>
-			      </label>
-			      <input type="text" placeholder="Enter Username" name="uname" required />
+			        <input 
+			      	  type="text" 
+			      	  placeholder="Enter Username" 
+			      	  name="uname" 
+			      	  value={formData.uname} 
+			      	  onChange={(e) => {
+			      	  	let thisVal = {uname: e.target.value}
+			      	  	setFormData(() => {
+			      	  	  return {...formData, ...thisVal }
+			      	  	})
+			      	  }}
+			      	  required />
+				  </label>
 
 			      <label htmlFor="psw"><b>Password</b></label>
-			      <input type="password" placeholder="Enter Password" name="psw" required/>
+			      <input 
+			        type="password" 
+			        placeholder="Enter Password" 
+			        name="psw" 
+			        value={formData.psw} 
+			        onChange={(e) => {
+			      	  	let thisVal = {psw: e.target.value}
+			      	  	setFormData(() => {
+			      	  	  return {...formData, ...thisVal }
+			      	  	})
+			      	  }}
+			      	required/>
 			        
 			      <button type="submit">Login</button>
 			      <label>
