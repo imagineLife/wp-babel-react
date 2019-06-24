@@ -1,27 +1,65 @@
 import React from 'react'
 import './index.css'
 import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
+import { Redirect } from 'react-router-dom'
 
 const Login = () => {
 
+	const [formValidating, setFormValidating] = React.useState(false)
+	const [ loggedIn, setLoggedIn ] = React.useState(false)
+	//Form Data
 	const [formData, setFormData] = React.useState({
 		uname: '',
 		psw: ''
 	})
 
+	// submit-form function
 	const submitForm = (e) => {
 		e.preventDefault()
+
+		//set state to 'know' the form is validating
+		setFormValidating(true)
+		
+		//mock network delay
+		setTimeout(() => {
+
+			//fetch login api
+			fetch(`../../dummyAPI/formData.json`)
+			.then(res => res.json())
+			.then(res => {
+				console.log('res')
+				console.log(res)
+				console.log('formData')
+				console.log(formData)
+				let formRes = res[0]
+
+				//Check for "correct" uname && password
+				//This will USUALLY be done on the server
+				if(formRes.uname == formData.uname && formRes.psw == formData.psw){
+					setLoggedIn(true)
+				}
+				
+			})
+		}, 1500)
+	}
+
+	
+	if(loggedIn){
+		return( <Redirect to="/dashboard" /> )
 	}
 
 	return(
 		<div id="login">
-			<form className="modal-content animate" onSubmit={e => submitForm(e)}>
+			<form className={`modal-content animate ${formValidating ? 'fetching' : ''}`} onSubmit={e => submitForm(e)}>
 			    <div className="imgcontainer">
 			      <img src={CompanyLogo} alt="Generic Company" className="avatar" />
 			    </div>
 
+			{/* Show Loading when mock-fetching login data  */}
+			    {formValidating && <p id="logginInNotification">Logging In...</p>}
+
 			    <div className="container">
-			      <label htmlFor="uname">
+			      	<label htmlFor="uname">
 			      	<b>Username</b>
 			        <input 
 			      	  type="text" 
@@ -34,11 +72,13 @@ const Login = () => {
 			      	  	  return {...formData, ...thisVal }
 			      	  	})
 			      	  }}
-			      	  required />
+			      	  required
+			      	  disabled={formValidating} />
 				  </label>
 
-			      <label htmlFor="psw"><b>Password</b></label>
-			      <input 
+			      <label htmlFor="psw">
+			      	<b>Password</b>
+			      	<input 
 			        type="password" 
 			        placeholder="Enter Password" 
 			        name="psw" 
@@ -49,12 +89,15 @@ const Login = () => {
 			      	  	  return {...formData, ...thisVal }
 			      	  	})
 			      	  }}
-			      	required/>
+			      	required
+			      	disabled={formValidating}/>
+				  </label>
 			        
 			      <button type="submit">Login</button>
 			      <label>
 			        <input type="checkbox" name="remember" /> Remember me
 			      </label>
+
 			    </div>
 
 			    <div className="container" style={{backgroundColor: "#f1f1f1"}}>
