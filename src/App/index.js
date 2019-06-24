@@ -10,29 +10,25 @@ const DetailRoute = React.lazy(() => import('../containers/ItemDetails'))
 
 const AppRouter = () => {
 	const appConfig = useAppConfig()
-	const [srcData, setSrcData] = React.useState(null)
 	const [userData, setUserData] = React.useState(null)
+	const [srcData, setSrcData] = React.useState(null)
 
-	React.useEffect(() => {
-		if(appConfig !== null){
-			setTimeout(() => {
-				fetch(`../../dummyAPI/${appConfig.sourceString}.json`)
-				.then(res => res.json())
-				.then(res => {
-					setSrcData(res)
-				})	
-			}, 1500)
+	// React.useEffect(() => {
+	// 	if(appConfig !== null && userData !== null){
+	// 		setTimeout(() => {
+	// 			fetch(`../../dummyAPI/${appConfig.sourceString}.json`)
+	// 			.then(res => res.json())
+	// 			.then(res => {
+	// 				setSrcData(res)
+	// 			})	
+	// 		}, 1500)
 			
-		}
-	}, [appConfig])
+	// 	}
+	// }, [userData])
 
 	if(!appConfig){
 		console.log('no appconfig');
 		return(<p>Loading appconfig...</p>)
-	}
-
-	if(appConfig && srcData == null){
-		return(<p>Loaded AppConfig, Now loading src data...</p>)
 	}
 	
   	return (
