@@ -12,19 +12,7 @@ const AppRouter = () => {
 	const appConfig = useAppConfig()
 	const [userData, setUserData] = React.useState(null)
 	const [srcData, setSrcData] = React.useState(null)
-
-	// React.useEffect(() => {
-	// 	if(appConfig !== null && userData !== null){
-	// 		setTimeout(() => {
-	// 			fetch(`../../dummyAPI/${appConfig.sourceString}.json`)
-	// 			.then(res => res.json())
-	// 			.then(res => {
-	// 				setSrcData(res)
-	// 			})	
-	// 		}, 1500)
-			
-	// 	}
-	// }, [userData])
+	const [ loggedIn, setLoggedIn ] = React.useState(false)
 
 	if(!appConfig){
 		console.log('no appconfig');
@@ -37,7 +25,7 @@ const AppRouter = () => {
 	      	
 	      	<Route exact path="/login" exact render={() => (
 	      	  <React.Suspense fallback={<p>Loading Login...</p>}>
-	      	  	<LoginRoute />
+	      	  	<LoginRoute setLoggedIn={(d) => setLoggedIn(d)} loggedIn={loggedIn}/>
 	      	  </React.Suspense>
 	      	)}/>
 	      	<Route exact path="/dashboard" exact render={() => (
@@ -53,7 +41,7 @@ const AppRouter = () => {
 	      	)} />
 
 	      	<Route exact path="/" render={() => (
-			  userData ? (
+			  loggedIn ? (
 			    <Redirect to="/dashboard"/>
 			  ) : (
 			    <Redirect to="/login"/>

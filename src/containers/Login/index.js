@@ -3,10 +3,10 @@ import './index.css'
 import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
 import { Redirect } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({setLoggedIn, loggedIn}) => {
 
 	const [formValidating, setFormValidating] = React.useState(false)
-	const [ loggedIn, setLoggedIn ] = React.useState(false)
+	
 	//Form Data
 	const [formData, setFormData] = React.useState({
 		uname: '',
@@ -36,13 +36,13 @@ const Login = () => {
 				//Check for "correct" uname && password
 				//This will USUALLY be done on the server
 				if(formRes.uname == formData.uname && formRes.psw == formData.psw){
+					
 					setLoggedIn(true)
 				}
 				
 			})
 		}, 1500)
 	}
-
 	
 	if(loggedIn){
 		return( <Redirect to="/dashboard" /> )
