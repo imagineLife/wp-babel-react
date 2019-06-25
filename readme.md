@@ -5,7 +5,7 @@ Compared to [Create React App](https://github.com/facebook/create-react-app), th
  
 # Table of Contents
 1. [Tooling Overview](#tooling-overview)
-2. [Tooling Details](#tooling-details)
+2. [Tooling Closer Look](#tooling-details)
 3. [Frontend UI Startup Process Order Overview](#frontend-ui-startup-process-order-overview)
 4. [File Structure Overview](#file-structure-overview)
 5. [Dummy Dashboard UI && State Management Overview](#dummy-dashboard-ui-and-state-management-overview)
@@ -41,7 +41,7 @@ _What is Babel? from the babel [docs](https://babeljs.io/docs/en/)..._
  
 &nbsp;
  
-## Tooling Details
+## Tooling Closer Look
 ### Babel Preset && Plugin Overview
 [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env)
 (from the docs...)
