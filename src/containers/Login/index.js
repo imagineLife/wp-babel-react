@@ -27,12 +27,7 @@ const Login = ({setLoggedIn, loggedIn}) => {
 			fetch(`../../dummyAPI/formData.json`)
 			.then(res => res.json())
 			.then(res => {
-				console.log('res')
-				console.log(res)
-				console.log('formData')
-				console.log(formData)
 				let formRes = res[0]
-
 				//Check for "correct" uname && password
 				//This will USUALLY be done on the server
 				if(formRes.uname == formData.uname && formRes.psw == formData.psw){
