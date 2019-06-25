@@ -1,10 +1,12 @@
 [ 
 	{
 		"dev": {
-			"sourceString": "devSource"
+			"sourceString": "devSource",
+			"apiString": "dummyAPI"
 		},
 		"prod": {
-			"sourceString": "prodSource"
+			"sourceString": "prodSource",
+			"apiString": "real/api/here"
 		}
 	}
 ]
