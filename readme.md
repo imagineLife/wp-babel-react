@@ -8,6 +8,7 @@ Compared to [Create React App](https://github.com/facebook/create-react-app), th
 1. [Tooling Overview](#tooling-overview)
 2. [Tooling Closer Look](#tooling-details)
 3. [Frontend UI Startup Process Order Overview](#frontend-ui-startup-process-order-overview)
+  - [Frontend Routing](#react-routing) 
 4. [File Structure Overview](#file-structure-overview)
 5. [Dummy Dashboard UI && State Management Overview](#dummy-dashboard-ui-and-state-management-overview)
 6. [Coming Additions](#coming-additions)
@@ -86,7 +87,9 @@ Allow parsing of ```import()```, primarily for [React's Lazy-Loading](https://re
       - API result data
       - fetch-data function
       - fetching status 
+  
    #### React Routing 
+  
    Here, There are 3 routes. These routes are all imported using [React.lazy](https://reactjs.org/docs/code-splitting.html#reactlazy), which (_from the docs_) _"...lets you render a dynamic import as a regular component."_ This...
    - **reduces initial load size** of the page
    - **requests a new js/css file** when the route is loaded  
