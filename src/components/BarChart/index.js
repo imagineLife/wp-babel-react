@@ -6,7 +6,9 @@ const BarChart = ({data, xScale, yScale}) => {
 			id="barChartWrapper" 
 			width="400" 
 			height="250">
-			{data.map((d, ind) => {
+			{!data && <text x="50" y="50">loading data...</text>}
+			
+			{data && data.map((d, ind) => {
 		
 				let thisKey = Object.keys(d)[0]
 						
