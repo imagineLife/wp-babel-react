@@ -12,25 +12,45 @@ const AppRouter = () => {
 	const appConfig = useAppConfig()
 	const [userData, setUserData] = React.useState(null)
 	const [srcData, setSrcData] = React.useState(null)
-	const [ loggedIn, setLoggedIn ] = React.useState(false)
+	const [loggedIn, setLoggedIn ] = React.useState(false)
 
+	React.useEffect(() => {
+		if(loggedIn){
+			console.log('NOTICED that You"ve been logged in...');
+			setTimeout(() => {
+				console.log('Fetching Dashboard Data after logged in...');
+				console.log('appConfig')
+				console.log(appConfig)
+				
+				fetch(`../../dummyAPI/${appConfig.sourceString}.json`)
+				.then(res => res.json())
+				.then(res => setSrcData(res))
+			}, 1500)
+		}
+	}, [loggedIn])
+	
 	if(!appConfig){
-		console.log('no appconfig');
+		console.log('no appconfig');	
 		return(<p>Loading appconfig...</p>)
 	}
-	
+
   	return (
 	    <Router>
 	      <Switch>
 	      	
 	      	<Route exact path="/login" exact render={() => (
 	      	  <React.Suspense fallback={<p>Loading Login...</p>}>
-	      	  	<LoginRoute setLoggedIn={(d) => setLoggedIn(d)} loggedIn={loggedIn}/>
+	      	  	<LoginRoute 
+	      	  		setLoggedIn={(d) => setLoggedIn(d)} 
+	      	  		loggedIn={loggedIn}/>
 	      	  </React.Suspense>
 	      	)}/>
+
 	      	<Route exact path="/dashboard" exact render={() => (
 	      	  <React.Suspense fallback={<p>Loading Dashboard...</p>}>
-	      	  	<DashRoute data={srcData} />
+	      	  	<DashRoute 
+	      	  		data={srcData} 
+	      	  		loggedIn={loggedIn} />
 	      	  </React.Suspense>
 	      	)}/>
 
