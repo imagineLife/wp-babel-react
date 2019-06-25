@@ -9,8 +9,9 @@ const Dashboard = ({data, loggedIn}) => {
 		return( <Redirect to="/login" /> )
 	}
 
-	console.log('data')
-	console.log(data)
+	if(!data){
+		return(<p>No Data Yet...</p>)
+	}
 	
 
 	let xScale = scaleOrdinal().domain(data.map(d => {
