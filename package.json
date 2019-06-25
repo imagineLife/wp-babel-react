@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production",
-    "dev": "NODE_ENV=dev webpack-dev-server --mode development --open 'Google Chrome'",
+    "buildqc": "webpack --mode production --config webpack.qc.config.js",
+    "dev": "webpack-dev-server --mode development --open 'Google Chrome'",
     "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
@@ -48,6 +49,7 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
+    "d3-scale": "^3.0.0",
     "react-router-dom": "^5.0.1"
   },
   "jest": {
