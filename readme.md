@@ -1,3 +1,4 @@
+
 **This is** a front-end project boilerplate.
 Compared to [Create React App](https://github.com/facebook/create-react-app), this is
 - **lighter weight:** less dependencies
@@ -73,7 +74,7 @@ Allow parsing of ```import()```, primarily for [React's Lazy-Loading](https://re
   - Take vars from appconfig to inform the rest of the project:
     - I.E environment-specific vars (api strings, port number(s), etc)
 2. Fetch a dummy data source (_src/App/index.js **ln38**_)
-  - **NETWORK LAG MOCK**: placeholder _setTimeout_ here to mock network lag
+  - **NETWORK LAG MOCKING**: placeholder _setTimeout_ here to mock network lag
   - [React.useEffect](https://reactjs.org/docs/hooks-effect.html) notices when appConfig gets retrieved && saved && triggers a data-fetching call
 3. App Rendering (_src/App/index.js **ln51**_)
   - if fetching case
@@ -84,10 +85,21 @@ Allow parsing of ```import()```, primarily for [React's Lazy-Loading](https://re
     - show dashboard && pass props:
       - API result data
       - fetch-data function
-      - fetching status
- 
+      - fetching status 
+   #### React Routing 
+   Here, There are 3 routes. These routes are all imported using [React.lazy](https://reactjs.org/docs/code-splitting.html#reactlazy), which (_from the docs_) _"...lets you render a dynamic import as a regular component."_ This...
+   - **reduces initial load size** of the page
+   - **requests a new js/css file** when the route is loaded  
 &nbsp;
- 
+   - ```/login```
+     - shows the login page
+   - ```/dashboard```
+     - shows a simple bar chart 
+   - ```/itemDetails```
+     - will show some item details
+
+&nbsp; 
+
 ## File Structure Overview
 **appconfig** contains configurable settings
  
@@ -108,8 +120,8 @@ Allow parsing of ```import()```, primarily for [React's Lazy-Loading](https://re
  
 &nbsp;
  
-## Coming Additions
-- React-routing @ root level
+## Coming Additions  
+#### ...Perhaps  
 - Some demo tests [Jest](https://jestjs.io/) [Enzyme](https://github.com/airbnb/enzyme)
 - Testing pre-commit
 - [Linting pre-commit](https://prettier.io/docs/en/precommit.html)
