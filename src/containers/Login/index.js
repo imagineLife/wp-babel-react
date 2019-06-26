@@ -3,7 +3,7 @@ import './index.css'
 import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
 import { Redirect } from 'react-router-dom'
 
-const Login = ({setLoggedIn, loggedIn}) => {
+const Login = ({setLoggedIn, loggedIn, apiString}) => {
 
 	const [formValidating, setFormValidating] = React.useState(false)
 	
@@ -24,7 +24,7 @@ const Login = ({setLoggedIn, loggedIn}) => {
 		setTimeout(() => {
 
 			//fetch login api
-			fetch(`../../dummyAPI/formData.json`)
+			fetch(`../../${apiString}/formData.json`)
 			.then(res => res.json())
 			.then(res => {
 				let formRes = res[0]
