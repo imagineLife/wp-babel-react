@@ -58,7 +58,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
         { from: 'appconfig/config.qc.js', to: 'appconfig/config.js'},
-        { from: 'dummyAPI', to: 'dummyAPI'}
+        { from: 'qcAPI', to: 'qcAPI'}
     ])
   ],
   devServer: {
