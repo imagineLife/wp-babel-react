@@ -14,6 +14,11 @@ const AppRouter = () => {
 	const [srcData, setSrcData] = React.useState(null)
 	const [loggedIn, setLoggedIn ] = React.useState(false)
 
+
+	console.log('AppRouter: => appConfig')
+	console.log(appConfig)
+	
+	//fetches mock data when logged-in
 	React.useEffect(() => {
 		if(loggedIn){
 			console.log('NOTICED that You"ve been logged in...');
@@ -22,12 +27,12 @@ const AppRouter = () => {
 			setTimeout(() => {
 				console.log('Fetching Dashboard Data after logged in...');
 				
-				fetch(`../../dummyAPI/${appConfig.sourceString}.json`)
+				fetch(`../../${appConfig.apiString}/${appConfig.sourceFileString}.json`)
 				.then(res => res.json())
 				.then(res => {
 					setSrcData(res)
 				})
-			}, 1500)
+			}, 5000)
 		}
 	}, [loggedIn])
 	
@@ -43,7 +48,8 @@ const AppRouter = () => {
 	      	  <React.Suspense fallback={<p>Loading Login...</p>}>
 	      	  	<LoginRoute 
 	      	  		setLoggedIn={(d) => setLoggedIn(d)} 
-	      	  		loggedIn={loggedIn}/>
+	      	  		loggedIn={loggedIn}
+	      	  		apiString={appConfig.apiString}/>
 	      	  </React.Suspense>
 	      	)}/>
 
