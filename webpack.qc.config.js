@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCss = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -54,7 +55,10 @@ module.exports = {
     new MiniCss({
       filename: '[name].css',
       chunkFilename: '[id].css'
-    })
+    }),
+    new CopyWebpackPlugin([
+        { from: 'appconfig', to: 'appconfig'}
+    ])
   ],
   devServer: {
     historyApiFallback: true
