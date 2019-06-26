@@ -57,7 +57,8 @@ module.exports = {
       chunkFilename: '[id].css'
     }),
     new CopyWebpackPlugin([
-        { from: 'appconfig', to: 'appconfig'}
+        { from: 'appconfig/config.qc.js', to: 'appconfig/config.js'},
+        { from: 'dummyAPI', to: 'dummyAPI'}
     ])
   ],
   devServer: {
