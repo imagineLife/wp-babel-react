@@ -11,7 +11,7 @@ const useAppConfig = () => {
 			fetch(`./appconfig/config.js`)
 			.then(res => res.json()) 
 			.then(res => {
-				setAppConfig(res[0]['dev'])	
+				setAppConfig(res[0])	
 			})
 		}, 1500)
 	}, [])
