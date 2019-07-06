@@ -3,6 +3,8 @@ import './index.css'
 import SingleBox from './SingleBox'
 
 let boxesArr = [
+
+  // ROW 1
   [
     {
       class: 'col-2',
@@ -34,12 +36,29 @@ let boxesArr = [
       box: 'black',
       txt: '2 columns'
     }
+  ],
+
+  // ROW 2
+  [
+    {
+      class: 'col-2-3',
+      box: 'orange',
+      txt: '2-3 columns'
+    },
+    {
+      class: 'col-2-3',
+      box: 'blue',
+      txt: '2-3 columns'
+    },
+    {
+      class: 'col-2-3',
+      box: 'green',
+      txt: '2-3 columns'
+    }
   ]
 ]
 
 const ResponsiveBoxes = () => {
-    console.log('boxesArr')
-    console.log(boxesArr)
     
   return(
     <main role="main">
@@ -61,20 +80,6 @@ const ResponsiveBoxes = () => {
       </div>)
     })}
 
-    <div className="row">
-      <div className="col-2-3">
-        <div className="box orange">2-3 columns</div>
-      </div>
-      <div className="col-2-3">
-        <div className="box blue">2-3 columns</div>
-      </div>
-      <div className="col-2-3">
-        <div className="box green">2-3 columns</div>
-      </div>
-      <div className="col-2-3">
-        <div className="box black">2-3 columns</div>
-      </div>
-    </div>
 
     <div className="row">
       <div className="col-3">
@@ -85,9 +90,6 @@ const ResponsiveBoxes = () => {
       </div>
       <div className="col-3">
         <div className="box green">3 columns</div>
-      </div>
-      <div className="col-3">
-        <div className="box black">3 columns</div>
       </div>
     </div>
 
