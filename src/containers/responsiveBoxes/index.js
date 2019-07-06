@@ -7,84 +7,35 @@ let boxesArr = [
 
   // ROW 1
   [
-    {
-      class: 'col-2',
-      box: 'orange',
-      txt: '2 columns'
-    },
-    {
-      class: 'col-2',
-      box: 'blue',
-      txt: '2 columns'
-    },
-    {
-      class: 'col-2',
-      box: 'green',
-      txt: '2 columns'
-    },
-    {
-      class: 'col-2',
-      box: 'black',
-      txt: '2 columns'
-    },
-    {
-      class: 'col-2',
-      box: 'black',
-      txt: '2 columns'
-    },
-    {
-      class: 'col-2',
-      box: 'black',
-      txt: '2 columns'
-    }
+    { class: 'col-2', box: 'orange', txt: '2 columns' },
+    { class: 'col-2', box: 'blue', txt: '2 columns' },
+    { class: 'col-2', box: 'green', txt: '2 columns' },
+    { class: 'col-2', box: 'black', txt: '2 columns' },
+    { class: 'col-2', box: 'black', txt: '2 columns' },
+    { class: 'col-2', box: 'black', txt: '2 columns' }
   ],
 
   // ROW 2
   [
-    {
-      class: 'col-2-3',
-      box: 'orange',
-      txt: '2-3 columns'
-    },
-    {
-      class: 'col-2-3',
-      box: 'blue',
-      txt: '2-3 columns'
-    },
-    {
-      class: 'col-2-3',
-      box: 'green',
-      txt: '2-3 columns'
-    },
-    {
-      class: 'col-2-3',
-      box: 'green',
-      txt: '2-3 columns'
-    }
+    { class: 'col-2-3', box: 'orange', txt: '2-3 columns' },
+    { class: 'col-2-3', box: 'blue', txt: '2-3 columns' },
+    { class: 'col-2-3', box: 'green', txt: '2-3 columns' },
+    { class: 'col-2-3', box: 'green', txt: '2-3 columns' }
   ],
 
   // ROW 3
   [
-    {
-      class: 'col-3',
-      box: 'orange',
-      txt: '3 columns'
-    },
-    {
-      class: 'col-3',
-      box: 'blue',
-      txt: '3 columns'
-    },
-    {
-      class: 'col-3',
-      box: 'green',
-      txt: '3 columns'
-    },
-    {
-      class: 'col-3',
-      box: 'green',
-      txt: '3 columns'
-    }
+    { class: 'col-3', box: 'orange', txt: '3 columns' },
+    { class: 'col-3', box: 'blue', txt: '3 columns' },
+    { class: 'col-3', box: 'green', txt: '3 columns' },
+    { class: 'col-3', box: 'green', txt: '3 columns' }
+  ],
+
+  //ROW 4
+  [
+    { class: 'col-4', box: 'blue', txt: '4 columns' },
+    { class: 'col-4', box: 'green', txt: '4 columns' },
+    { class: 'col-4', box: 'green', txt: '4 columns' }
   ]
 ]
 
@@ -112,18 +63,6 @@ const ResponsiveBoxes = () => {
         })}
       </div>)
     })}
-
-    <div className="row">
-      <div className="col-4">
-        <div className="box orange">4 columns</div>
-      </div>
-      <div className="col-4">
-        <div className="box blue">4 columns</div>
-      </div>
-      <div className="col-4">
-        <div className="box green">4 columns</div>
-      </div>
-    </div>
 
     <div className="row">
       <div className="col-6">
