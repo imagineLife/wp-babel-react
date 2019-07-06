@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import SingleBox from './SingleBox'
 
 let boxesArr = [
   [
@@ -50,9 +51,12 @@ const ResponsiveBoxes = () => {
         className="row">
         {boxArr.map((b,idx) => {
           return(
-            <div key={`individualBox${idx} row${ind}`}className={b.class}>
-              <div className={`box ${b.box}`}>{b.txt}</div>
-            </div>)
+            <SingleBox 
+            key={`individualBox${idx} row${ind}`}
+            boxWrapperClass={b.class}
+            boxClassName={b.box}
+            boxTxt={b.txt}/>
+          )
         })}
       </div>)
     })}
