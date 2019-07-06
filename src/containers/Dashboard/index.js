@@ -2,12 +2,19 @@ import React from "react"
 import { scaleOrdinal, scaleLinear, scaleBand } from 'd3-scale';
 import { Redirect } from 'react-router-dom'
 import BarChart from '../../components/BarChart'
+import useWindowSize from '../../Hooks/UseWindowSize';
+
 const Dashboard = ({data, loggedIn}) => {
+
+	const size = useWindowSize()
 
 	if(loggedIn !== true){
 		console.log('Dashbaord Loaded...');
 		return( <Redirect to="/login" /> )
 	}
+	
+	console.log('size')
+	console.log(size)
 	
 	let xScale;
 	if(data){
