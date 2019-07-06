@@ -1,30 +1,61 @@
 import React from 'react'
 import './index.css'
 
+let boxesArr = [
+  [
+    {
+      class: 'col-2',
+      box: 'orange',
+      txt: '2 columns'
+    },
+    {
+      class: 'col-2',
+      box: 'blue',
+      txt: '2 columns'
+    },
+    {
+      class: 'col-2',
+      box: 'green',
+      txt: '2 columns'
+    },
+    {
+      class: 'col-2',
+      box: 'black',
+      txt: '2 columns'
+    },
+    {
+      class: 'col-2',
+      box: 'black',
+      txt: '2 columns'
+    },
+    {
+      class: 'col-2',
+      box: 'black',
+      txt: '2 columns'
+    }
+  ]
+]
+
 const ResponsiveBoxes = () => {
+    console.log('boxesArr')
+    console.log(boxesArr)
+    
   return(
     <main role="main">
 
-    <div className="row">
-      <div className="col-2">
-        <div className="box orange">2 columns</div>
-      </div>
-      <div className="col-2">
-        <div className="box blue">2 columns</div>
-      </div>
-      <div className="col-2">
-        <div className="box green">2 columns</div>
-      </div>
-      <div className="col-2">
-        <div className="box black">2 columns</div>
-      </div>
-      <div className="col-2">
-        <div className="box black">2 columns</div>
-      </div>
-      <div className="col-2">
-        <div className="box black">2 columns</div>
-      </div>
-    </div>
+    {boxesArr.map((boxArr, ind) => {
+      return(
+        <div 
+        key={`boxRow${ind}`}
+        className="row">
+        {boxArr.map((b,idx) => {
+          return(
+            <div key={`individualBox${idx} row${ind}`}className={b.class}>
+              <div className={`box ${b.box}`}>{b.txt}</div>
+            </div>)
+        })}
+      </div>)
+    })}
 
     <div className="row">
       <div className="col-2-3">
