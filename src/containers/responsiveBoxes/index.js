@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import SingleBox from './SingleBox'
+import ResponsiveWrapper from './ResponsiveWrapper'
 import useWindowSize from './Hooks/UseWindowSize';
 
 let boxesArr = [
@@ -73,7 +73,7 @@ const ResponsiveBoxes = () => {
         className="row">
         {boxArr.map((b,idx) => {
           return(
-            <SingleBox 
+            <ResponsiveWrapper 
             key={`individualBox${idx} row${ind}`}
             boxWrapperClass={b.class}
             boxClassName={b.box}
