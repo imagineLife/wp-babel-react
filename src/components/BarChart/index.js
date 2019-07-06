@@ -22,7 +22,7 @@ const BarChart = ({data, xScale, yScale, dims}) => {
 						key={`${thisKey}${ind}`} 
 						x={xScale(thisKey)} 
 						y={yScale(d[thisKey])}
-						height={400 - yScale(d[thisKey])}
+						height={dims.h - yScale(d[thisKey])}
 						fill={'steelblue'}
 						width={xScale.bandwidth()}/>
 				)
