@@ -6,15 +6,12 @@ import useWindowSize from '../../Hooks/UseWindowSize';
 
 const Dashboard = ({data, loggedIn}) => {
 
-	const size = useWindowSize()
+	const windowSize = useWindowSize()
 
 	if(loggedIn !== true){
-		console.log('Dashbaord Loaded...');
+		console.log('Dashbaord Loaded, but redirecting');
 		return( <Redirect to="/login" /> )
 	}
-	
-	console.log('size')
-	console.log(size)
 	
 	let xScale;
 	if(data){
@@ -34,7 +31,8 @@ const Dashboard = ({data, loggedIn}) => {
 			<BarChart
 				data={data}
 				xScale={xScale}
-				yScale={yScale}/>
+				yScale={yScale}
+				dims={windowSize}/>
 		</React.Fragment>
 
 	)
