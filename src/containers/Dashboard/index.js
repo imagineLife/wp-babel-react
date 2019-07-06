@@ -39,6 +39,10 @@ const Dashboard = ({data, loggedIn}) => {
 				xScale={xScale}
 				yScale={yScale}
 				dims={usableDims}/>
+
+			<p>Another non-chart element rendered here... </p>
+
+			<p>Yet another non-chart component &/or element rendered here... </p>
 		</React.Fragment>
 
 	)
