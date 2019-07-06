@@ -1,6 +1,7 @@
 import React from 'react'
 import './index.css'
 import SingleBox from './SingleBox'
+import useWindowSize from './Hooks/UseWindowSize';
 
 let boxesArr = [
 
@@ -59,7 +60,9 @@ let boxesArr = [
 ]
 
 const ResponsiveBoxes = () => {
-    
+
+  const size = useWindowSize()
+  
   return(
     <main role="main">
 
@@ -74,7 +77,8 @@ const ResponsiveBoxes = () => {
             key={`individualBox${idx} row${ind}`}
             boxWrapperClass={b.class}
             boxClassName={b.box}
-            boxTxt={b.txt}/>
+            boxTxt={b.txt}
+            parentSize={size}/>
           )
         })}
       </div>)
