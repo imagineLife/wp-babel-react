@@ -4,7 +4,7 @@ const BarChart = ({data, xScale, yScale, dims}) => {
 	
 	return(
 		<svg 
-			id="barChartWrapper" 
+			id="bar-chart-wrapper" 
 			width={dims.w} 
 			height={dims.h}>
 
@@ -19,6 +19,7 @@ const BarChart = ({data, xScale, yScale, dims}) => {
 						
 				return(
 					<rect 
+						className="single-bar"
 						key={`${thisKey}${ind}`} 
 						x={xScale(thisKey)} 
 						y={yScale(d[thisKey])}
