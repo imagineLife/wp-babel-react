@@ -2,6 +2,7 @@ import React from 'react';
 
 // Hook
 function useWindowSize() {
+
   const isClient = typeof window === 'object';
 
   function getSize() {
