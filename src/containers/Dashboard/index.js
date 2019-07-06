@@ -10,6 +10,10 @@ const Dashboard = ({data, loggedIn}) => {
 
 	let [usableDims, setUsableDims] = React.useState({w: windowSize.width * .75, h: windowSize.height * .5})
 
+	React.useEffect(() => {
+		setUsableDims({w: windowSize.width * .75, h: windowSize.height * .5})
+	}, [windowSize])
+
 	if(loggedIn !== true){
 		console.log('Dashbaord Loaded, but redirecting');
 		return( <Redirect to="/login" /> )
@@ -34,7 +38,7 @@ const Dashboard = ({data, loggedIn}) => {
 				data={data}
 				xScale={xScale}
 				yScale={yScale}
-				dims={windowSize}/>
+				dims={usableDims}/>
 		</React.Fragment>
 
 	)
