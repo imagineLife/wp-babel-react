@@ -7,12 +7,17 @@ import { useAppConfig } from '../lib/useAppConfig'
 const LoginRoute = React.lazy(() => import('../containers/Login'))
 const DashRoute = React.lazy(() => import('../containers/Dashboard'))
 const DetailRoute = React.lazy(() => import('../containers/ItemDetails'))
+const ResponsiveRoute = React.lazy(() => import('../containers/responsiveBoxes'))
 
 const AppRouter = () => {
 	const appConfig = useAppConfig()
 	const [userData, setUserData] = React.useState(null)
 	const [srcData, setSrcData] = React.useState(null)
-	const [loggedIn, setLoggedIn ] = React.useState(false)
+
+	//developing responsive boxes
+	const [loggedIn, setLoggedIn ] = React.useState(true)
+
+	// const [loggedIn, setLoggedIn ] = React.useState(false)
 
 
 	console.log('AppRouter: => appConfig')
@@ -67,9 +72,15 @@ const AppRouter = () => {
 	      	  </React.Suspense>
 	      	)} />
 
+	      	<Route exact path="/responsive" exact render={() => (
+	      	  <React.Suspense fallback={<p>Loading Item Details...</p>}>
+	      	  	<ResponsiveRoute />
+	      	  </React.Suspense>
+	      	)} />
+
 	      	<Route exact path="/" render={() => (
 			  loggedIn ? (
-			    <Redirect to="/dashboard"/>
+			    <Redirect to="/responsive"/>
 			  ) : (
 			    <Redirect to="/login"/>
 			  )
