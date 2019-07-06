@@ -28,14 +28,25 @@ let boxesArr = [
     { class: 'col-3', box: 'orange', txt: '3 columns' },
     { class: 'col-3', box: 'blue', txt: '3 columns' },
     { class: 'col-3', box: 'green', txt: '3 columns' },
-    { class: 'col-3', box: 'green', txt: '3 columns' }
+    { class: 'col-3', box: 'black', txt: '3 columns' }
   ],
 
   //ROW 4
   [
     { class: 'col-4', box: 'blue', txt: '4 columns' },
     { class: 'col-4', box: 'green', txt: '4 columns' },
-    { class: 'col-4', box: 'green', txt: '4 columns' }
+    { class: 'col-4', box: 'black', txt: '4 columns' }
+  ],
+
+  //ROW 5
+  [
+    { class: 'col-6', box: 'blue', txt: '6 columns' },
+    { class: 'col-6', box: 'green', txt: '6 columns' }
+  ],
+
+  //ROW 6
+  [
+    { class: 'col-12', box: 'black', txt: '6 columns' }
   ]
 ]
 
@@ -63,21 +74,6 @@ const ResponsiveBoxes = () => {
         })}
       </div>)
     })}
-
-    <div className="row">
-      <div className="col-6">
-        <div className="box orange">6 columns</div>
-      </div>
-      <div className="col-6">
-        <div className="box blue">6 columns</div>
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="col-12">
-        <div className="box orange">12 columns</div>
-      </div>
-    </div>
 
   </main>)
 }
