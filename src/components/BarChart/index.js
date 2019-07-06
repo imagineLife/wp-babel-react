@@ -1,14 +1,12 @@
 import React from 'react';
 import './index.css'
 const BarChart = ({data, xScale, yScale, dims}) => {
-
-	let [usableDims, setUsableDims] = React.useState({w: dims.width * .75, h: dims.height * .5})
 	
 	return(
 		<svg 
 			id="barChartWrapper" 
-			width={usableDims.w} 
-			height={usableDims.h}>
+			width={dims.w} 
+			height={dims.h}>
 
 			{/* If No Data, show placeholder text*/}
 
