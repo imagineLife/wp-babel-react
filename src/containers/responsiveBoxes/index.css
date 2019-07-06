@@ -495,3 +495,35 @@ template {
     width: 100%;
   }
 }
+
+
+
+/*
+
+  'Box' Styles
+
+*/
+
+.box {
+  height: 200px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.blue {
+  background-color: blue;
+}
