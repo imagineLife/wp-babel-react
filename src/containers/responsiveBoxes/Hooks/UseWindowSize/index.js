@@ -27,7 +27,7 @@ function useWindowSize() {
 
       resizeID = setTimeout(() => {
         setWindowSize(getSize());  
-      }, 100)
+      }, 150)
       
     }
 
