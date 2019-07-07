@@ -4,7 +4,7 @@ import './index.css'
 import { CSSTransition } from 'react-transition-group';
 
 const BarChart = ({data, xScale, yScale, dims}) => {
-
+	
 	return(
 		<svg 
 			id="bar-chart-wrapper" 
@@ -21,14 +21,10 @@ const BarChart = ({data, xScale, yScale, dims}) => {
 				return(
 				  <CSSTransition
 				  	key={`${thisKey}${ind}`} 
-					component="g"
 					timeout={1550}
 					in={data && data.length > 0}
 					classNames="single-rects"
-					appear
-					onEnter={() => console.log('enter!')}
-					onEntering={() => console.log('entering!')}
-					onEntered={() => console.log('entered!')}>
+					appear>
 					  <rect
 						x={xScale(thisKey)} 
 						y={yScale(d[thisKey])}
