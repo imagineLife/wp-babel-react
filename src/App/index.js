@@ -49,45 +49,46 @@ const AppRouter = () => {
   	return (
 	    <Router>
 	      <Switch>
-	      	
-	      	<Route exact path="/login" exact render={() => (
-	      	  <React.Suspense fallback={<p>Loading Login...</p>}>
-	      	  	<LoginRoute 
-	      	  		setLoggedIn={(d) => setLoggedIn(d)} 
-	      	  		loggedIn={loggedIn}
-	      	  		apiString={appConfig.apiString}/>
-	      	  </React.Suspense>
-	      	)}/>
+	      	<UserContext.Provider value={loggedIn}>
+		      	<Route exact path="/login" exact render={() => (
+		      	  <React.Suspense fallback={<p>Loading Login...</p>}>
+		      	  	<LoginRoute 
+		      	  		setLoggedIn={(d) => setLoggedIn(d)} 
+		      	  		loggedIn={loggedIn}
+		      	  		apiString={appConfig.apiString}/>
+		      	  </React.Suspense>
+		      	)}/>
 
-	      	<Route exact path="/dashboard" exact render={() => (
-	      	  <React.Suspense fallback={<p>Loading Dashboard...</p>}>
-	      	  	<DashRoute 
-	      	  		data={srcData} 
-	      	  		loggedIn={loggedIn} />
-	      	  </React.Suspense>
-	      	)}/>
+		      	<Route exact path="/dashboard" exact render={() => (
+		      	  <React.Suspense fallback={<p>Loading Dashboard...</p>}>
+		      	  	<DashRoute 
+		      	  		data={srcData} 
+		      	  		loggedIn={loggedIn} />
+		      	  </React.Suspense>
+		      	)}/>
 
-	      	<Route exact path="/itemDetails" exact render={() => (
-	      	  <React.Suspense fallback={<p>Loading Item Details...</p>}>
-	      	  	<DetailRoute />
-	      	  </React.Suspense>
-	      	)} />
+		      	<Route exact path="/itemDetails" exact render={() => (
+		      	  <React.Suspense fallback={<p>Loading Item Details...</p>}>
+		      	  	<DetailRoute />
+		      	  </React.Suspense>
+		      	)} />
 
-	      	<Route exact path="/responsive" exact render={() => (
-	      	  <React.Suspense fallback={<p>Loading Item Details...</p>}>
-	      	  	<ResponsiveRoute />
-	      	  </React.Suspense>
-	      	)} />
+		      	<Route exact path="/responsive" exact render={() => (
+		      	  <React.Suspense fallback={<p>Loading Item Details...</p>}>
+		      	  	<ResponsiveRoute />
+		      	  </React.Suspense>
+		      	)} />
 
-	      	<Route exact path="/" render={() => (
-			  loggedIn ? (
-			    <Redirect to="/responsive"/>
-			  ) : (
-			    <Redirect to="/login"/>
-			  )
-			)}/>
+		      	<Route exact path="/" render={() => (
+				  loggedIn ? (
+				    <Redirect to="/responsive"/>
+				  ) : (
+				    <Redirect to="/login"/>
+				  )
+				)}/>
 
-	      	<Redirect from="/*" to="/dashboard" />
+		      	<Redirect from="/*" to="/dashboard" />
+		    </UserContext.Provider>
 
 	      </Switch>
 	    </Router>
