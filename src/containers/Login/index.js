@@ -5,9 +5,9 @@ import { Redirect } from 'react-router-dom'
 
 import UserContext from '../../Context/UserContext'
 
-const Login = ({setLoggedIn, loggedIn, apiString}) => {
+const Login = ({setLoggedIn, apiString}) => {
 
-	const UserContextData = React.useContext(UserContext);
+	const UserContextLoggedIn = React.useContext(UserContext);
 	
 	const [formValidating, setFormValidating] = React.useState(false)
 	
@@ -43,7 +43,7 @@ const Login = ({setLoggedIn, loggedIn, apiString}) => {
 		}, 300)
 	}
 	
-	if(loggedIn){
+	if(UserContextLoggedIn){
 		return( <Redirect to="/dashboard" /> )
 	}
 
