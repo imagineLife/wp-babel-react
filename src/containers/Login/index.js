@@ -3,8 +3,12 @@ import './index.css'
 import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
 import { Redirect } from 'react-router-dom'
 
+import UserContext from '../../Context/UserContext'
+
 const Login = ({setLoggedIn, loggedIn, apiString}) => {
 
+	const UserContextData = React.useContext(UserContext);
+	
 	const [formValidating, setFormValidating] = React.useState(false)
 	
 	//Form Data
@@ -36,7 +40,7 @@ const Login = ({setLoggedIn, loggedIn, apiString}) => {
 				}
 				
 			})
-		}, 1500)
+		}, 300)
 	}
 	
 	if(loggedIn){
