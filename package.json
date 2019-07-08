@@ -50,7 +50,8 @@
   },
   "dependencies": {
     "d3-scale": "^3.0.0",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "react-transition-group": "^4.2.1"
   },
   "jest": {
     "setupFilesAfterEnv": [
