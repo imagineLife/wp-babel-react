@@ -21,11 +21,12 @@ const BarChart = ({data, xScale, yScale, dims}) => {
 				return(
 				  <CSSTransition
 				  	key={`${thisKey}${ind}`} 
-					timeout={1550}
+					timeout={0}
 					in={data && data.length > 0}
 					classNames="single-rects"
 					appear>
 					  <rect
+					  	className="single-rects"
 						x={xScale(thisKey)} 
 						y={yScale(d[thisKey])}
 						height={dims.h - yScale(d[thisKey])}
