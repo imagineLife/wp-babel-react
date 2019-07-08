@@ -49,12 +49,10 @@ const AppRouter = () => {
   	return (
 	    <Router>
 	      <Switch>
-	      	<UserContext.Provider value={loggedIn}>
+	      	<UserContext.Provider value={{loggedIn, setLoggedIn}}>
 		      	<Route exact path="/login" exact render={() => (
 		      	  <React.Suspense fallback={<p>Loading Login...</p>}>
 		      	  	<LoginRoute 
-		      	  		setLoggedIn={(d) => setLoggedIn(d)} 
-		      	  		loggedIn={loggedIn}
 		      	  		apiString={appConfig.apiString}/>
 		      	  </React.Suspense>
 		      	)}/>
@@ -62,8 +60,7 @@ const AppRouter = () => {
 		      	<Route exact path="/dashboard" exact render={() => (
 		      	  <React.Suspense fallback={<p>Loading Dashboard...</p>}>
 		      	  	<DashRoute 
-		      	  		data={srcData} 
-		      	  		loggedIn={loggedIn} />
+		      	  		data={srcData}/>
 		      	  </React.Suspense>
 		      	)}/>
 

@@ -6,9 +6,9 @@ import useWindowSize from '../../Hooks/UseWindowSize';
 
 import UserContext from '../../Context/UserContext'
 
-const Dashboard = ({data, loggedIn}) => {
+const Dashboard = ({data}) => {
 
-	const UserContextLoggedIn = React.useContext(UserContext);
+	const {loggedIn} = React.useContext(UserContext);
 	
 	const windowSize = useWindowSize()
 
@@ -18,7 +18,7 @@ const Dashboard = ({data, loggedIn}) => {
 		setUsableDims({w: windowSize.width * .75, h: windowSize.height * .5})
 	}, [windowSize])
 
-	if(UserContextLoggedIn !== true){
+	if(loggedIn !== true){
 		console.log('Dashbaord Loaded, but redirecting');
 		return( <Redirect to="/login" /> )
 	}
