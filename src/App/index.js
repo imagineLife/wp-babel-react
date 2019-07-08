@@ -4,6 +4,8 @@ import Title from '../components/Title'
 import {BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import { useAppConfig } from '../lib/useAppConfig'
 
+import UserContext from '../Context/UserContext';
+
 const LoginRoute = React.lazy(() => import('../containers/Login'))
 const DashRoute = React.lazy(() => import('../containers/Dashboard'))
 const DetailRoute = React.lazy(() => import('../containers/ItemDetails'))
@@ -15,9 +17,8 @@ const AppRouter = () => {
 	const [srcData, setSrcData] = React.useState(null)
 
 	//developing responsive boxes
-	const [loggedIn, setLoggedIn ] = React.useState(true)
-
-	// const [loggedIn, setLoggedIn ] = React.useState(false)
+	// const [loggedIn, setLoggedIn ] = React.useState(true)
+	const [loggedIn, setLoggedIn ] = React.useState(false)
 
 
 	console.log('AppRouter: => appConfig')
@@ -37,7 +38,7 @@ const AppRouter = () => {
 				.then(res => {
 					setSrcData(res)
 				})
-			}, 5000)
+			}, 2500)
 		}
 	}, [loggedIn])
 	
