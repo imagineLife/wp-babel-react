@@ -4,8 +4,12 @@ import { Redirect } from 'react-router-dom'
 import BarChart from '../../components/BarChart'
 import useWindowSize from '../../Hooks/UseWindowSize';
 
+import UserContext from '../../Context/UserContext'
+
 const Dashboard = ({data, loggedIn}) => {
 
+	const UserContextLoggedIn = React.useContext(UserContext);
+	
 	const windowSize = useWindowSize()
 
 	let [usableDims, setUsableDims] = React.useState({w: windowSize.width * .75, h: windowSize.height * .5})
@@ -14,16 +18,14 @@ const Dashboard = ({data, loggedIn}) => {
 		setUsableDims({w: windowSize.width * .75, h: windowSize.height * .5})
 	}, [windowSize])
 
-	if(loggedIn !== true){
+	if(UserContextLoggedIn !== true){
 		console.log('Dashbaord Loaded, but redirecting');
 		return( <Redirect to="/login" /> )
 	}
 	
 	let xScale;
 	if(data){
-		xScale = scaleBand().domain(data.map(d => {
-			return Object.keys(d)[0]
-		})).range([0, usableDims.w])
+		xScale = scaleBand().domain(data.map(d => Object.keys(d)[0])).range([0, usableDims.w])
 		.paddingInner(.2)
 		.paddingOuter(.1)
 	}
