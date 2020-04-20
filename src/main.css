@@ -1,3 +1,31 @@
-body{
-	line-height: 2;
+/* Menu Styles */
+.userMenu {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.userMenu ul {
+  font-size: 16px;
+  list-style: none;
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  margin: 0;
+  padding: 5px 0;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.userMenu li {
+  cursor: pointer;
+  display: block;
+  padding: 3px 20px;
+}
+.userMenu li:hover {
+  background-color: #e3eafd;
+}
+
+.userAvatar {
+  border-radius: 50%;
+  max-width: 45px;
 }

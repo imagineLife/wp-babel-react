@@ -7,8 +7,7 @@
     "test": "jest",
     "build": "webpack --mode production",
     "buildqc": "webpack --mode production --config webpack.qc.config.js",
-    "dev": "webpack-dev-server --mode development --open 'Google Chrome'",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open 'Google Chrome'"
   },
   "repository": {
     "type": "git",

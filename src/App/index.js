@@ -24,24 +24,6 @@ const AppRouter = () => {
 	console.log('AppRouter: => appConfig')
 	console.log(appConfig)
 	
-	//fetches mock data when logged-in
-	React.useEffect(() => {
-		if(loggedIn){
-			console.log('NOTICED that You"ve been logged in...');
-			
-			//mock network-delay
-			setTimeout(() => {
-				console.log('Fetching Dashboard Data after logged in...');
-				
-				fetch(`../../${appConfig.apiString}/${appConfig.sourceFileString}.json`)
-				.then(res => res.json())
-				.then(res => {
-					setSrcData(res)
-				})
-			}, 2500)
-		}
-	}, [loggedIn])
-	
 	if(!appConfig){	
 		return(<p>Loading appconfig...</p>)
 	}

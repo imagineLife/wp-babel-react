@@ -1,0 +1,26 @@
+Overview
+1. init npm
+	npm init -y
+2. include gitignore
+3. include webpack
+	npm install --save-dev webpack
+4. include webpack-cli
+	npm install --save-dev webpack-cli
+	"Any parameters sent to the CLI will map to a corresponding parameter in the config file."
+	https://webpack.js.org/api/cli/
+5.make src directory && dummy index.js file
+	src/index.js
+	console.log("I'm the beginning of this project")
+6. set npm scripts for webpack to build the project
+	build "webpack --mode production"
+	"dev" : "webpack --mode development"
+X. include some babel packages
+	https://babeljs.io/docs/en/
+	@babel/core
+	babel-loader
+	@babel/preset-env
+	https://babeljs.io/docs/en/babel-preset-env
+X. update babel config vars
+	{
+		"presets": [ "@babel/preset-env" ]
+	}
