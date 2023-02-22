@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 import CompanyLogo from '../../../static/imgs/generic-logo.jpg'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 import UserContext from '../../Context/UserContext'
 
@@ -45,7 +45,7 @@ const Login = ({ apiString}) => {
 	}
 	
 	if(loggedIn){
-		return( <Redirect to="/dashboard" /> )
+		return( <Navigate to="/dashboard" /> )
 	}
 
 	return(
